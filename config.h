@@ -1,12 +1,12 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = 250;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
 
-static const char *fonts[] = { "Font Awesome 6 Free" };
+static const char *fonts[] = { "Font Awesome 6 Free:size=18" };
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -67,8 +67,9 @@ static const char *fonts[] = { "Font Awesome 6 Free" };
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ username,	"  %s |",	NULL},
-	{ cpu_perc,	"  CPU: %s%% |",	NULL},
-	{ ram_perc,	"  RAM: %s%% |",	NULL},
-	{ datetime, "  %s",           "%F %T" },
+	{ run_command, 	" VOL %s |", 	"amixer get Master |awk '$0~/%/{print $5}' | tr -d '[%]'"},
+	{ cpu_perc,	" CPU %s |",	NULL},
+	{ ram_perc,	" RAM %s |",	NULL},
+	{ battery_perc,	" BAT %s |", 	"BAT1"},
+	{ datetime, 	" %s ",		"%T" },
 };
