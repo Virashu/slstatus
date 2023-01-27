@@ -6,7 +6,7 @@ const unsigned int interval = 250;
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
 
-static const char *fonts[] = { "Font Awesome 6 Free:size=18" };
+static const char *fonts[] = { "Symbols Nerd Font:size=24" };
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -67,9 +67,9 @@ static const char *fonts[] = { "Font Awesome 6 Free:size=18" };
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ run_command, 	" VOL %s |", 	"amixer get Master |awk '$0~/%/{print $5}' | tr -d '[%]'"},
-	{ cpu_perc,	" CPU %s |",	NULL},
+	{ run_command, 	" VOL %s |", 	"amixer get Master |awk '$0~/%/{print $5}' | tr -d '[%]'"},
+	{ cpu_perc,	" CPU %s |",	NULL},
 	{ ram_perc,	" RAM %s |",	NULL},
-	{ battery_perc,	" BAT %s |", 	"BAT1"},
-	{ datetime, 	" %s ",		"%T" },
+	{ battery_perc,	" BAT %s |", 	"BAT1"},
+	{ datetime, 	" %s ",	"%T" },
 };
