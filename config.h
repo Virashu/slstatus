@@ -64,12 +64,18 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ run_command,	" VOL %s |",	"amixer get Master |awk '$0~/%/{print $5}' | tr -d '[%]'" },
-	{ run_command,	" BRT %s |",	"light -G | cut -d'.' -f1" },
-	{ keymap,	" %s |",	NULL },
-	//{ disk_free,	" DSK %s |",	"/"},
-	{ cpu_perc,	" CPU %s |",	NULL },
-	{ ram_perc,	" RAM %s |",	NULL },
-	{ battery_perc, " BAT %s |", 	"BAT1" },
-	{ datetime,	"  %s ",	"%H:%M" },
+	//{ run_command,	"%s",		"~/Documents/bt.sh" },
+	{ run_command,	" %s",		"~/Documents/volume.sh" },
+	{ run_command,	" %s ┃",	"amixer get Master |awk '$0~/%/{print $5}' | tr -d '[%]'" },
+	//{ run_command,	" BRT %s ┃",	"light -G | cut -d'.' -f1" },
+	{ run_command,	" 󰃞 %s ┃",	"light -G | cut -d'.' -f1" },
+	{ keymap,	" %s ┃",	NULL },
+	//{ disk_free,	" DSK %s │",	"/"},
+	{ cpu_perc,	"  %s ",	NULL },
+	{ ram_perc,	"/ %s ┃",	NULL },
+	{ run_command,	" %s",		"~/Documents/battery.sh" },
+	{ battery_perc, " %s% ┃", 	"BAT1" },
+	//{ datetime,	"  %s ",	"%H:%M" },
+	{ datetime,	" %s ",	"%H:%M" },
+	//{ run_command,	"𓂸 ➈",		"" }
 };
