@@ -66,16 +66,17 @@ static const struct arg args[] = {
 	/* function format          argument */
 	//{ run_command,	"%s",		"~/Documents/bt.sh" },
 	{ run_command,	" %s",		"~/Documents/volume.sh" },
-	{ run_command,	" %s ┃",	"amixer get Master |awk '$0~/%/{print $5}' | tr -d '[%]'" },
+	{ run_command,	" %s ",	"amixer get Master |awk '$0~/%/{print $5}' | tr -d '[%]'" },
+  //{ run_command,	"\x1b[41;32;1m %s \x1b[0m",	"amixer get Master |awk '$0~/%/{print $5}' | tr -d '[%]'" },
 	//{ run_command,	" BRT %s ┃",	"light -G | cut -d'.' -f1" },
-	{ run_command,	" 󰃞 %s ┃",	"light -G | cut -d'.' -f1" },
-	{ keymap,	" %s ┃",	NULL },
+	{ run_command,	" 󰃞 %s ",	"light -G | cut -d'.' -f1" },
+	{ keymap,	" %s ",	NULL },
 	//{ disk_free,	" DSK %s │",	"/"},
 	{ cpu_perc,	"  %s ",	NULL },
-	{ ram_perc,	"/ %s ┃",	NULL },
+	{ ram_perc,	"/ %s ",	NULL },
 	{ run_command,	" %s",		"~/Documents/battery.sh" },
-	{ battery_perc, " %s% ┃", 	"BAT1" },
+	{ battery_perc, " %s%% ", 	"BAT1" },
 	//{ datetime,	"  %s ",	"%H:%M" },
-	{ datetime,	" %s ",	"%H:%M" },
+	{ datetime,	"\x03\x02 %s \x01",	"%H:%M" },
 	//{ run_command,	"𓂸 ➈",		"" }
 };
